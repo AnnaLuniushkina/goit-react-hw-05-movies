@@ -1,0 +1,18 @@
+.navigation {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navigation_item {
+    margin-right: 25px;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.7;
+}
+
+.active {
+    composes: navigation_item;
+    color: red;
+}

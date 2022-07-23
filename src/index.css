@@ -13,3 +13,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.Circles {
+  display: flex;
+  justify-content: center;
+}
+
+.additional_title {
+  font-size: 25px;
+  padding-left: 10px;
+}
+
+.additional_information {
+  padding-left: 10px;
+}
+
+.additional_item {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: black;
+  text-decoration: none;
+}
+
+.additional_item:hover {
+  color: red;
+} 

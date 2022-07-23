@@ -1,0 +1,36 @@
+.movie_details_page {
+display: flex;
+}
+
+.img_wrapper {
+    margin-right: 25px;
+}
+
+.movie_title {
+    font-size: 30px;
+}
+
+.user_score {
+    font-size: 20px;
+}
+
+.span {
+    font-weight: 700;
+    color: red;
+}
+
+.overview {
+    font-size: 25px;
+}
+
+.movie_overview {
+    font-size: 20px;
+}
+
+.genres {
+    font-size: 25px;
+}
+
+.genres_text {
+    font-size: 20px;
+}
