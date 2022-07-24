@@ -2,8 +2,6 @@ import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSearchMovies } from "services/API";
 import MoviesSearchPage from "components/MoviesSearchPage/MoviesSearchPage";
-import NotFound from "./NotFound";
-
 
 export default function Movies() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -19,6 +17,8 @@ export default function Movies() {
                 setMoviesList(response.data.results);
             });
         }
+
+        
     }, [query]);
     
     const handleNameChange = (event) => {
@@ -34,11 +34,11 @@ export default function Movies() {
         return alert('Введіть пошуковий запит.');
         }
         
-        setSearchParams(`query=${searchQuery}`);
+    setSearchParams(`query=${searchQuery}`);
 
-        getSearchMovies(searchQuery).then(response => {
+    getSearchMovies(searchQuery).then(response => {
             setMoviesList(response.data.results);
-        });
+    });
         
     }
     const input = {
@@ -70,7 +70,6 @@ export default function Movies() {
                 <button type="submit" style={button}>Search</button>
             </form>
             <div>{moviesList && <MoviesSearchPage moviesList={moviesList} />}</div>
-            <div>{moviesList && <NotFound /> }</div>
         </>
     );
 };

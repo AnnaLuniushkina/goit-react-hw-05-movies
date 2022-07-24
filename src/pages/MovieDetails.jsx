@@ -17,10 +17,6 @@ export default function MovieDetails() {
         });
     }, [movieId]);
 
-    // if (!movie) {
-    //         return <NotFound />
-    //     }
-
     const path = location?.state?.from ?? '/';
 
     const button = {
