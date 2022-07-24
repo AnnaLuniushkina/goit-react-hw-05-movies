@@ -2,6 +2,7 @@ import { useState, useEffect, Suspense } from "react";
 import { useParams, Link,  useLocation, Outlet } from "react-router-dom";
 import { getMovieDetails } from "services/API";
 import MovieDetailsPage from "components/MovieDetailsPage/MovieDetailsPage";
+import NotFound from "./NotFound";
 
 export default function MovieDetails() {
     const [movie, setMovie] = useState(null);
@@ -16,6 +17,10 @@ export default function MovieDetails() {
         });
     }, [movieId]);
 
+    // if (!movie) {
+    //         return <NotFound />
+    //     }
+
     const path = location?.state?.from ?? '/';
 
     const button = {
@@ -29,8 +34,11 @@ export default function MovieDetails() {
     return (
         <>
             <Link to={path}><button style={button}>Go back</button></Link>
+            {!movie && <NotFound />}
             {movie && <MovieDetailsPage movie={movie} />}
-            <hr />
+            {movie && 
+                <>
+                    <hr />
             <h3 className="additional_title">Additional information</h3>
             <ul className="additional_information">
                 <li >
@@ -40,7 +48,10 @@ export default function MovieDetails() {
                     <Link className='additional_item' to="reviews" state={{from: path}}>Reviews</Link>
                 </li>
             </ul>
-            <hr />
+                    <hr />
+                </>
+            }
+            
             <Suspense>
                 <Outlet/>
             </Suspense>

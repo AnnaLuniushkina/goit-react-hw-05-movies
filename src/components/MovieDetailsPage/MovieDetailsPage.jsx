@@ -3,6 +3,7 @@ import s from './MovieDetailsPage.module.css';
 
 export default function MovieDetailsPage({ movie }) {
     const { poster_path, title, release_date, vote_average, overview, genres } = movie;
+
     return (
         <div className={s.movie_details_page}>
             <div className={s.img_wrapper}>
@@ -22,7 +23,7 @@ export default function MovieDetailsPage({ movie }) {
                     movie.name).join(', ')}</p>
                 
             </div>
-        </div>
+        </div> 
     );
 };
 

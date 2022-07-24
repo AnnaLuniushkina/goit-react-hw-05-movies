@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getSearchMovies } from "services/API";
 import MoviesSearchPage from "components/MoviesSearchPage/MoviesSearchPage";
+import NotFound from "./NotFound";
 
 
 export default function Movies() {
@@ -69,7 +70,7 @@ export default function Movies() {
                 <button type="submit" style={button}>Search</button>
             </form>
             <div>{moviesList && <MoviesSearchPage moviesList={moviesList} />}</div>
-
+            <div>{moviesList && <NotFound /> }</div>
         </>
     );
 };
